@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Qount Automation Suite">
+  <listeners>
+  	<listener class-name="com.qount.qa.listeners.MyListeners" />
+  </listeners>
+  <test name="Qount Tests">
+  <!--parameter name="browser" value="Mozilla"/> -->
+  <!-- <parameter name="browser" value="IE"/> -->
+   <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="esignatures.Esignatureoptions"/>
+      <class name="organizers.Organizertest"/>
+      <class name="proposals.Proposalstest"/>
+
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
+  

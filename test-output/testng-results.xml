@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-10-19T19:30:36 IST" name="Default suite" finished-at="2024-10-19T19:31:19 IST" duration-ms="42493">
+    <groups>
+    </groups>
+    <test started-at="2024-10-19T19:30:36 IST" name="Default test" finished-at="2024-10-19T19:31:19 IST" duration-ms="42493">
+      <class name="proposals.Proposalstest">
+        <test-method is-config="true" signature="initializeTestBaseSetup(org.testng.ITestContext)[pri:0, instance:proposals.Proposalstest@3a52dba3]" started-at="2024-10-19T19:30:37 IST" name="initializeTestBaseSetup" finished-at="2024-10-19T19:30:42 IST" duration-ms="5768" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@255eaa6b]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTestBaseSetup -->
+        <test-method is-config="true" signature="setproposal()[pri:0, instance:proposals.Proposalstest@3a52dba3]" started-at="2024-10-19T19:30:42 IST" name="setproposal" finished-at="2024-10-19T19:30:42 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setproposal -->
+        <test-method signature="proposalresend()[pri:5, instance:proposals.Proposalstest@3a52dba3]" started-at="2024-10-19T19:30:42 IST" name="proposalresend" finished-at="2024-10-19T19:31:18 IST" duration-ms="36186" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- proposalresend -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:proposals.Proposalstest@3a52dba3]" started-at="2024-10-19T19:31:18 IST" name="closeDriver" finished-at="2024-10-19T19:31:19 IST" duration-ms="281" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- proposals.Proposalstest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
