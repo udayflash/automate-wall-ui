@@ -16,7 +16,7 @@ import com.qount.qa.proppackage.SetupProperties;
 
 	public class ProposalStatusPage extends SetupProperties {
 	    WebDriver driver; 
-	    FluentWait<WebDriver> wait;
+//	    FluentWait<WebDriver> wait;
 		JavascriptExecutor jsDriver;
 		NgWebDriver ngWebDriver;
 		
@@ -33,19 +33,19 @@ import com.qount.qa.proppackage.SetupProperties;
 		}
 		public void Proposaltabs() throws InterruptedException {
 		driver.findElement(By.xpath("//div[normalize-space()='Pending Signature']")).click();
-	    Thread.sleep(6000);
+	    Thread.sleep(8000);
 		driver.findElement(By.xpath("//div[normalize-space()='Pending Payment']")).click();
-		Thread.sleep(6000);
-		driver.findElement(By.xpath("//div[normalize-space()='Completed']")).click();
-		Thread.sleep(6000);
+		Thread.sleep(8000);
+		driver.findElement(By.xpath("//div[normalize-space()='Verify']")).click();
+		Thread.sleep(8000);
 		driver.findElement(By.xpath("//div[normalize-space()='Draft']")).click();
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		driver.findElement(By.xpath("//div[normalize-space()='Declined']")).click();
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 	    driver.findElement(By.xpath("//div[normalize-space()='Trash']")).click();
-	    Thread.sleep(6000);
+	    Thread.sleep(8000);
 	    driver.findElement(By.xpath("//div[normalize-space()='Done']")).click();
-	    Thread.sleep(6000);
+	    Thread.sleep(8000);
 	    }
 		public void searchProposal() throws InterruptedException, IOException {
 			driver.findElement(By.xpath("//input[@placeholder='Search']")).click();

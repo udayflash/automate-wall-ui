@@ -31,13 +31,13 @@ public class SendOrganizer extends SetupProperties {
 			jsDriver = (JavascriptExecutor) driver;
 			ngWebDriver = new NgWebDriver(jsDriver);
 		    }
-	 public void loginqountweb() throws InterruptedException, IOException {
+/*	 public void loginqountweb() throws InterruptedException, IOException {
          SetupProper();
 	    driver.findElement(userEmail).sendKeys(prop.getProperty("validemail"));   
 		driver.findElement(userPwd).sendKeys(prop.getProperty("validpassword"));
 	 	driver.findElement(loginButton).click();
 	 	Thread.sleep(7000);
- }
+ }      */
 //    @Test
 	public void clientsend() throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
@@ -99,5 +99,6 @@ public class SendOrganizer extends SetupProperties {
     driver.findElement(By.xpath("//span[normalize-space()='Save as Draft']")).click();
     Thread.sleep(2000);
     driver.findElement(By.xpath("//span[normalize-space()='Send']")).click();
+	Thread.sleep(3000);
     }
 }

@@ -19,7 +19,7 @@ import com.paulhammant.ngwebdriver.NgWebDriver;
 	public class EsignaturesPage extends SetupProperties {
 
 				WebDriver driver;
-				FluentWait<WebDriver> wait;
+	//			FluentWait<WebDriver> wait;
 				JavascriptExecutor jsDriver;
 				NgWebDriver ngWebDriver;
 				

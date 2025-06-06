@@ -29,13 +29,13 @@ public class ScheduleOrganizer extends SetupProperties {
 			jsDriver = (JavascriptExecutor) driver;
 			ngWebDriver = new NgWebDriver(jsDriver);
 		    }
-	 public void loginqountweb() throws InterruptedException, IOException {
+/*	 public void loginqountweb() throws InterruptedException, IOException {
          SetupProper();
 	    driver.findElement(userEmail).sendKeys(prop.getProperty("validemail"));   
 		driver.findElement(userPwd).sendKeys(prop.getProperty("validpassword"));
 	 	driver.findElement(loginButton).click();
 	 	Thread.sleep(7000);
- }
+ }       */
 //    @Test
 	public void sendattime() throws InterruptedException, IOException {
 		// TODO Auto-generated method stub

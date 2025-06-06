@@ -31,14 +31,14 @@ public class OrganizerDashboard extends SetupProperties {
 			jsDriver = (JavascriptExecutor) driver;
 			ngWebDriver = new NgWebDriver(jsDriver);
 		    }
-	 public void loginqountweb() throws InterruptedException, IOException {
+/*	 public void loginqountweb() throws InterruptedException, IOException {
          SetupProper();
 	    driver.findElement(userEmail).sendKeys(prop.getProperty("validemail"));   
 		driver.findElement(userPwd).sendKeys(prop.getProperty("validpassword"));
 	 	driver.findElement(loginButton).click();
 			 //   	loginPage.login();
 	 	Thread.sleep(7000);
- }
+ }   */
  //   @Test
 	public void dashorg() throws InterruptedException, IOException {
 		// TODO Auto-generated method stub

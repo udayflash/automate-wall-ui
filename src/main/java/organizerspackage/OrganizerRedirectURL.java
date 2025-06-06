@@ -31,13 +31,13 @@ public class OrganizerRedirectURL extends SetupProperties {
 			jsDriver = (JavascriptExecutor) driver;
 			ngWebDriver = new NgWebDriver(jsDriver);
 		    }
-	 public void loginqountweb() throws InterruptedException, IOException {
+/*	 public void loginqountweb() throws InterruptedException, IOException {
          SetupProper();
 	    driver.findElement(userEmail).sendKeys(prop.getProperty("validemail"));   
 		driver.findElement(userPwd).sendKeys(prop.getProperty("validpassword"));
 	 	driver.findElement(loginButton).click();
 	 	Thread.sleep(7000);
- }
+ }          */
 //    @Test
 	public void dirurl() throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
@@ -69,6 +69,6 @@ public class OrganizerRedirectURL extends SetupProperties {
 	    driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys(Keys.ENTER);
 	    Thread.sleep(4000);
 	    driver.findElement(By.xpath("//button[@aria-label='Clear']//span[@class='mat-mdc-button-touch-target']")).click();
-	    
+	    Thread.sleep(3000);
     }
 }

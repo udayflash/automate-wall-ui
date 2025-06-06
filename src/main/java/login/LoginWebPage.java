@@ -16,7 +16,7 @@ public class LoginWebPage extends SetupProperties {
 		WebDriver driver;
 		NgWebDriver ngWebDriver;
 		JavascriptExecutor jsDriver;
-        FluentWait<WebDriver> wait;
+ //       FluentWait<WebDriver> wait;
 		
 		private By userEmail = By.cssSelector("input[placeholder='Username']");
 		private By userPwd = By.id("input__password");
@@ -32,15 +32,22 @@ public class LoginWebPage extends SetupProperties {
 			ngWebDriver = new NgWebDriver(jsDriver);
 		}
 		public void loginqountweb() throws InterruptedException, IOException {
-		         SetupProper();
-				driver.findElement(userEmail).sendKeys(prop.getProperty("validEmail"));   				
+			    SetupProper();
+//				driver.findElement(userEmail).sendKeys(prop.getProperty("validEmail"));
 //				driver.findElement(userEmail).clear();
 //				driver.findElement(userEmail).sendKeys(prop.getProperty("validEmail"));
 //				driver.findElement(userPwd).sendKeys(prop.getProperty("validPassword"));
 //				driver.findElement(userPwd).clear();
-				driver.findElement(userPwd).sendKeys(prop.getProperty("validPassword"));				
-			 	driver.findElement(loginButton).click();
-			 	Thread.sleep(8000);							 	
+//				driver.findElement(userPwd).sendKeys(prop.getProperty("validPassword"));
+//			 	driver.findElement(loginButton).click();
+//			 	Thread.sleep(12000);
+		//	driver.get("https://test.qount.io");
+		//	driver.manage().window().maximize();
+		//	Thread.sleep(3000);
+			driver.findElement(userEmail).sendKeys(prop.getProperty("validEmail"));
+			driver.findElement(userPwd).sendKeys(prop.getProperty("validPassword"));
+			driver.findElement(loginButton).click();
+			Thread.sleep(14000);
 			}	
 		public void wallhome() throws InterruptedException, IOException {
 			driver.findElement(homeButton).click();
@@ -56,6 +63,7 @@ public class LoginWebPage extends SetupProperties {
 			Thread.sleep(2000);
 			driver.findElement(logout).click();
 			Thread.sleep(6000);
+			driver.close();
 		}   		
 		public void loginInvalidCredentials() throws InterruptedException, IOException {	
 			    SetupProper();

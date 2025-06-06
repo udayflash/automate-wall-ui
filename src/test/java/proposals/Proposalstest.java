@@ -21,11 +21,11 @@ import proposalspackage.ProposalStatusPage;
 		ProposalStatusPage proposalkey;
 		
 	    @BeforeClass
-	    public void setproposal() throws InterruptedException, IOException {
+	    public void setproposal() throws Exception {// InterruptedException, IOException {
             loginpagekey = new LoginWebPage(driver);
 	    	proposalkey = new ProposalStatusPage(driver);
 	    }	
-	        @Test(priority=1)
+	        @Test(priority = 1)
 			public void proposallists() throws Exception {
 				loginpagekey.loginqountweb();
 				proposalkey.Proposalsclick();

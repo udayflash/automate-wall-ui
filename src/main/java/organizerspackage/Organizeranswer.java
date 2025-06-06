@@ -13,31 +13,33 @@ import org.openqa.selenium.interactions.Actions;
 import com.github.dockerjava.api.model.Driver;
 import com.paulhammant.ngwebdriver.NgWebDriver;
 import com.qount.qa.proppackage.SetupProperties;
+import org.openqa.selenium.support.ui.FluentWait;
 
 public class Organizeranswer extends SetupProperties {
     WebDriver driver;
     JavascriptExecutor jsDriver;
-	NgWebDriver ngWebDriver;
+    NgWebDriver ngWebDriver;
+ //   FluentWait<WebDriver> wait;
 	
-    private By userEmail = By.cssSelector("input[placeholder='Username']");
+/*    private By userEmail = By.cssSelector("input[placeholder='Username']");
  	private By userPwd = By.id("input__password");
  	private By loginButton = By.xpath("//button[@type='submit']");
 // 	private By errorMessage = By.xpath("//div[@class='error mb-20']");
  	private By userProfile = By.xpath("(//div[@class='mat-mdc-menu-trigger logout-profile-badge'])[1]");
- 	private By logout = By.xpath("(//span[contains(text(),'Sign Out')])[1]");
+ 	private By logout = By.xpath("(//span[contains(text(),'Sign Out')])[1]");    */
  	
 	public Organizeranswer(WebDriver driver) {
             this.driver = driver;
 			jsDriver = (JavascriptExecutor) driver;
 			ngWebDriver = new NgWebDriver(jsDriver);
 		    }
-	 public void loginqountweb() throws InterruptedException, IOException {
+/*	 public void loginqountweb() throws InterruptedException, IOException {
          SetupProper();
 	    driver.findElement(userEmail).sendKeys(prop.getProperty("validemail"));   
 		driver.findElement(userPwd).sendKeys(prop.getProperty("validpassword"));
 	 	driver.findElement(loginButton).click();
-	 	Thread.sleep(7000);
- }
+	 	Thread.sleep(7000);    */
+// }
  //   @Test
 	public void answerpage() throws InterruptedException, IOException {
 		// TODO Auto-generated method stub

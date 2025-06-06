@@ -1,22 +1,26 @@
 package com.qount.qa.base;
 
+import com.qount.qa.utils.Utilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import com.paulhammant.ngwebdriver.NgWebDriver;
 import com.qount.qa.proppackage.SetupProperties;
-import com.qount.qa.utils.Utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import org.testng.internal.protocols.UnhandledIOException;
 
 public class TestBaseSetup extends SetupProperties implements ITestListener {
 
@@ -24,8 +28,10 @@ public class TestBaseSetup extends SetupProperties implements ITestListener {
 	protected FluentWait<WebDriver> wait;
 	protected NgWebDriver ngWebDriver;
 	protected JavascriptExecutor jsDriver;
-	
-	private WebDriver returnDriver(String webbrowser) throws IOException {
+
+	@Parameters({"webbrowser"})
+	@Test
+	private WebDriver returnDriver(String webbrowser) throws IOException, InterruptedException {
 		
 		if (webbrowser.equalsIgnoreCase("chrome")) {
 		WebDriverManager.chromedriver().setup();
@@ -40,20 +46,22 @@ public class TestBaseSetup extends SetupProperties implements ITestListener {
 		driver = new EdgeDriver();     
 		} 
 		else {
+			throw new IllegalArgumentException("Invalid browser");
 //			driver = new ChromeDriver();    
 		}		    
 		jsDriver = (JavascriptExecutor) driver;
 		ngWebDriver = new NgWebDriver(jsDriver);
-        SetupProper();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Utilities.IMPLICIT_WAIT_TIME));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Utilities.IMPLICIT_WAIT_TIME));
 //		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Utilities.PAGE_LOAD_TIME));
-		driver.manage().window().maximize();
+//		driver.manage().window().maximize();
 		wait = new FluentWait<WebDriver>(driver);
 		wait.ignoring(NoSuchElementException.class);
 //	    wait.pollingEvery(Duration.ofMillis(250));
-		wait.withTimeout(Duration.ofSeconds(10));  
-		driver.get(prop.getProperty("url"));		
-		ngWebDriver.waitForAngularRequestsToFinish();
+		wait.withTimeout(Duration.ofSeconds(10));
+		SetupProper();
+//		driver.get(prop.getProperty("url"));
+		driver.manage().window().maximize();
+//		ngWebDriver.waitForAngularRequestsToFinish();
 		return driver;
 	}	    
 	@BeforeClass
@@ -63,5 +71,5 @@ public class TestBaseSetup extends SetupProperties implements ITestListener {
 	}
 	@AfterClass
 	public void closeDriver() throws IOException, InterruptedException{
-	driver.quit();
+	driver.close();
 }}

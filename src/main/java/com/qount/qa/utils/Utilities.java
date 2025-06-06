@@ -28,7 +28,7 @@ import lombok.experimental.UtilityClass;
 public class Utilities extends SetupProperties implements ITestListener {
 	WebDriver driver = null;
 	public static final int IMPLICIT_WAIT_TIME=10;
-	public static final int PAGE_LOAD_TIME=15;
+	public static final int PAGE_LOAD_TIME=20;
 	
 	public static String generateEmailWithTimeStamp() {
 		

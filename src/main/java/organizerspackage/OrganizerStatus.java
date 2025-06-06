@@ -1,23 +1,13 @@
 package organizerspackage;
-import java.io.File;
 import java.io.IOException;
-import java.time.Duration;
-import javax.lang.model.element.UnknownElementException;
-import javax.naming.spi.DirStateFactory.Result;
-import org.apache.commons.io.FileUtils;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import com.aventstack.extentreports.util.Assert;
 import com.paulhammant.ngwebdriver.NgWebDriver;
 import com.qount.qa.proppackage.SetupProperties;
 
@@ -27,16 +17,16 @@ public class OrganizerStatus extends SetupProperties {
     WebDriver driver; 
 	JavascriptExecutor jsDriver;
 	NgWebDriver ngWebDriver;
-	FluentWait<WebDriver> wait;
+//	FluentWait<WebDriver> wait;
 	
-//	 private static By organizerdata = By.xpath("(//td[normalize-space()='All Qs DLs 85 dup'])[1]");
-//     private static By inprogresstab = By.xpath("//div[normalize-space()='In Progress']");
-//     private static By clientorganizer = By.xpath("//span[normalize-space()='Bullvice ledgers']");
-//     private static By radiobutton = By.xpath("(//mat-card[@class='mat-mdc-card mdc-card py-0'])[1]//span[normalize-space()='Anjaneyulu']");
+	 private static By organizerdata = By.xpath("(//td[normalize-space()='All Qs DLs 85 dup'])[1]");
+     private static By inprogresstab = By.xpath("//div[normalize-space()='In Progress']");
+     private static By clientorganizer = By.xpath("//span[normalize-space()='Bullvice ledgers']");
+     private static By radiobutton = By.xpath("(//mat-card[@class='mat-mdc-card mdc-card py-0'])[1]//span[normalize-space()='Anjaneyulu']");
 	   
 //	 	private By errorMessage = By.xpath("//div[@class='error mb-20']");
-	 	private By userProfile = By.xpath("(//div[@class='mat-mdc-menu-trigger logout-profile-badge'])[1]");
-	 	private By logout = By.xpath("(//span[contains(text(),'Sign Out')])[1]");
+//	 	private By userProfile = By.xpath("(//div[@class='mat-mdc-menu-trigger logout-profile-badge'])[1]");
+//	 	private By logout = By.xpath("(//span[contains(text(),'Sign Out')])[1]");
  	
 	 public OrganizerStatus(WebDriver driver) {
             this.driver = driver;
@@ -44,13 +34,11 @@ public class OrganizerStatus extends SetupProperties {
 			ngWebDriver = new NgWebDriver(jsDriver);
 		    }
 
-//    @Test
 	public void statustabs() throws InterruptedException, IOException {
-		// TODO Auto-generated method stub
-//	SetupProper();
+
 	driver.findElement(By.xpath("//span[text()='# Organizers']")).click();
 //	driver.findElement(By.cssSelector("body > app-root:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > app-side-bar:nth-child(1) > div:nth-child(4) > mat-tab-group:nth-child(1) > div:nth-child(2) > mat-tab-body:nth-child(1) > div:nth-child(1) > div:nth-child(1) > mat-selection-list:nth-child(1) > mat-list-option:nth-child(18) > span:nth-child(1) > span:nth-child(1) > span:nth-child(1)")).click();
-	Thread.sleep(5000);
+	Thread.sleep(7000);
     Actions actoned = new Actions(driver);
     WebElement orgrown = driver.findElement(By.xpath("(//td[normalize-space()='Real int 47'])[1]"));
     actoned.moveToElement(orgrown).perform();
@@ -68,28 +56,28 @@ public class OrganizerStatus extends SetupProperties {
     driver.findElement(By.xpath("//div[normalize-space()='Locked']")).click();
     Thread.sleep(4000);
     driver.findElement(By.xpath("//div[normalize-space()='Done']")).click();
-    Thread.sleep(6000);
+    Thread.sleep(8000);
     }
-	public void wallhome() throws InterruptedException, IOException {
-	driver.findElement(By.xpath("(//mat-icon[normalize-space()='home'])[1]")).click();
-	Thread.sleep(9000);
-	}
-	public void windowmain() throws InterruptedException, IOException {
+//	public void wallhome() throws InterruptedException, IOException {
+//	driver.findElement(By.xpath("(//mat-icon[normalize-space()='home'])[1]")).click();
+//	Thread.sleep(9000);
+//	}
+/*	public void windowmain() throws InterruptedException, IOException {
 		String realwindow = driver.getWindowHandle();
 		driver.switchTo().window(realwindow);
         Thread.sleep(4000);
-	}
+	}          */
 
 	public void allanswertype() throws InterruptedException, IOException{
 		// TODO Auto-generated method stub
     driver.findElement(By.xpath("//span[text()='# Organizers']")).click();
-    Thread.sleep(5000);
+    Thread.sleep(7000);
 	Actions actoned = new Actions(driver);
 	WebElement orgrown = driver.findElement(By.xpath("(//td[normalize-space()='Art 74 Qs'])[1]"));
 	actoned.moveToElement(orgrown).perform();
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("(//td[normalize-space()='Art 74 Qs'])[1]")).click();
-	Thread.sleep(3000);
+	Thread.sleep(6000);
 	driver.findElement(By.xpath("//div[normalize-space()='In Progress']")).click();
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("//span[normalize-space()='Teraline Fidgets']")).click();
@@ -110,9 +98,9 @@ public class OrganizerStatus extends SetupProperties {
     Thread.sleep(3000);//next section    */	
 	WebElement checkquestion = driver.findElement(By.xpath("(//div[normalize-space()='4.'])[1]"));
     actoned.moveToElement(checkquestion).perform();
-    Thread.sleep(2000);
+    Thread.sleep(4000);
     driver.findElement(By.xpath("//label[contains(text(),'Klusener')]")).click();   //checkbox
-    Thread.sleep(2000);
+    Thread.sleep(4000);
     driver.findElement(By.xpath("//label[contains(text(),'Kumble')]")).click();
     Thread.sleep(2000);
     driver.findElement(By.xpath("//label[contains(text(),'Klusener')]")).click();
@@ -205,8 +193,8 @@ public class OrganizerStatus extends SetupProperties {
 //        private By checkmark = By.xpath("(//div[@class='flex-grow-1 qs-card mb-2 c-pointer'])[3]//span[normalize-space()='True']//span[@class='checkmark']");
 
 /*    	public void organise() throws InterruptedException, IOException {
-    		// TODO Auto-generated method stub
-        	    driver.findElement(By.xpath("//span[text()='# Organizers']")).click();
+
+       	    driver.findElement(By.xpath("//span[text()='# Organizers']")).click();
                 Thread.sleep(5000);
     		    Actions actoned = new Actions(driver);
     		    WebElement orgrown = driver.findElement(By.xpath("(//td[normalize-space()='All Qs DLs 85 dup'])[1]"));
@@ -235,16 +223,16 @@ public class OrganizerStatus extends SetupProperties {
     	}     */
 
 	public void linkopen() throws InterruptedException, IOException {
-		// TODO Auto-generated method stub
+
     	driver.findElement(By.xpath("//span[text()='# Organizers']")).click();
-        Thread.sleep(5000);
+        Thread.sleep(7000);
 		driver.findElement(By.xpath("//mat-icon[normalize-space()='file_copy']")).click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 	    driver.findElement(By.xpath("//div[normalize-space()='Archived']")).click();
-	    Thread.sleep(4000);
+	    Thread.sleep(6000);
 	    Actions actone = new Actions(driver);
 	    WebElement orgrow = driver.findElement(By.xpath("//mat-row[@class='mat-mdc-row mdc-data-table__row cdk-row ng-star-inserted'][3]"));
-	    actone.moveToElement(orgrow).perform();
+	    actone.moveToElement(orgrow).build().perform();
 	    Thread.sleep(4000);
 	    driver.findElement(By.xpath("(//mat-icon[@role='img'][@mattooltip='Copy Link'])[3]")).click();
 	    Thread.sleep(4000);
@@ -393,7 +381,7 @@ public class OrganizerStatus extends SetupProperties {
     }
 
 	public void dashorg() throws InterruptedException, IOException {
-		// TODO Auto-generated method stub
+
     	driver.findElement(By.xpath("//span[text()='# Organizers']")).click();
         Thread.sleep(5000);
 		driver.findElement(By.xpath("//td[normalize-space()='Hamburg new300']")).click();
@@ -413,7 +401,7 @@ public class OrganizerStatus extends SetupProperties {
     }
 
 	public void answerpage() throws InterruptedException, IOException {
-		// TODO Auto-generated method stub
+
     driver.findElement(By.xpath("//span[text()='# Organizers']")).click();
     Thread.sleep(5000);
 	Actions actoned = new Actions(driver);
@@ -627,11 +615,11 @@ public class OrganizerStatus extends SetupProperties {
         }
     	public void filterorganizer() throws InterruptedException {
     		driver.findElement(By.xpath("//span[text()='# Organizers']")).click();
-    	    Thread.sleep(5000);
+    	    Thread.sleep(7000);
     		Actions actoned = new Actions(driver);
     		WebElement orgrown = driver.findElement(By.xpath("(//td[normalize-space()='Org 76 Automate'])[1]"));
     		actoned.moveToElement(orgrown).perform();
-    		Thread.sleep(4000);
+    		Thread.sleep(6000);
     		driver.findElement(By.xpath("(//td[normalize-space()='Org 76 Automate'])[1]")).click();
     		Thread.sleep(3000);
     		driver.findElement(By.xpath("//div[normalize-space()='Sent']")).click();
@@ -647,10 +635,10 @@ public class OrganizerStatus extends SetupProperties {
     		driver.findElement(By.xpath("//button[normalize-space()='Search']")).click();
     		Thread.sleep(5000);
     	}
-    	public void logoutqountweb() throws InterruptedException, IOException {
+ /*   	public void logoutqountweb() throws InterruptedException, IOException {
     		driver.findElement(userProfile).click();
     		Thread.sleep(2000);
     		driver.findElement(logout).click();
     		Thread.sleep(4000);
-    		}
+    		}    */
 	}

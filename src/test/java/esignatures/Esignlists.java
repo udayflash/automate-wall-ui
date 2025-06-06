@@ -2,6 +2,7 @@ package esignatures;
 import java.io.IOException;
 import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.testng.ITestListener;
+import org.testng.ITestNGListener;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -12,7 +13,7 @@ import com.qount.qa.listeners.MyListeners;
 import com.qount.qa.pages.EsignPage;
 
 @Listeners(MyListeners.class)
-public class Esignlists extends TestBaseSetup implements ITestListener  {
+public class Esignlists extends TestBaseSetup implements ITestNGListener {
 	
 	EsignPage esignpagekey;
 
@@ -23,44 +24,52 @@ public class Esignlists extends TestBaseSetup implements ITestListener  {
     }	
         @Test(priority = 1)
 		public void esignoptions() throws Exception {
-
 //			esignpagekey.loginqountweb();
+			esignpagekey.qountUrlWeb();
+			esignpagekey.qountLogon();
 			esignpagekey.esignpage();
 			esignpagekey.esignflowpop();
 			esignpagekey.settingspop();
 			esignpagekey.historypop();
 			esignpagekey.syncesigncloud();
-			
         }
         @Test(priority = 2)
         public void invoiceview() throws Exception {
  //       	esignpagekey.loginqountweb();
+			esignpagekey.qountUrlWeb();
+//			esignpagekey.qountLogon();
 			esignpagekey.esignpage();
         	esignpagekey.viewinvoicepage();
 			esignpagekey.windowmain();
-			esignpagekey.quitQtio();
+//			esignpagekey.quitQtio();
         }
-        @Test(priority = 3)
+/*        @Test(priority = 3)
         public void pagedownload() throws Exception {
  //       	esignpagekey.loginqountweb();
+			esignpagekey.qountUrlWeb();
+//			esignpagekey.qountLogon();
 			esignpagekey.esignpage();
         	esignpagekey.downloadepage();
-        	esignpagekey.quitQtio();
-        }
-        @Test(priority = 4)
+//        	esignpagekey.quitQtio();
+        }          */
+        @Test(priority = 3)
         public void securelink() throws Exception {
  //       	esignpagekey.loginqountweb();
+			esignpagekey.qountUrlWeb();
+//			esignpagekey.qountLogon();
 			esignpagekey.esignpage();
         	esignpagekey.securelinkpop();
 			esignpagekey.windowmain();
-			esignpagekey.quitQtio();
+//			esignpagekey.quitQtio();
         }
-        @Test(priority = 5)
+        @Test(priority = 4)
         public void esignstatuslist() throws Exception {
  //       	esignpagekey.loginqountweb();
+			esignpagekey.qountUrlWeb();
+//			esignpagekey.qountLogon();
 			esignpagekey.esignpage();
 			esignpagekey.listesignstatus();
-			esignpagekey.quitQtio();
+//			esignpagekey.quitQtio();
 //			esignpagekey.listesignstatus();
 }
 }

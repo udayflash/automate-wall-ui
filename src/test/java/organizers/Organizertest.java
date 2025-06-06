@@ -10,6 +10,8 @@ import com.qount.qa.base.TestBaseSetup;
 import com.qount.qa.listeners.MyListeners;
 
 import login.LoginWebPage;
+import organizerspackage.OrganizerCases;
+import organizerspackage.OrganizerRedirectURL;
 import organizerspackage.OrganizerStatus;
 import proposalspackage.ProposalStatusPage;
 
@@ -19,79 +21,104 @@ import proposalspackage.ProposalStatusPage;
 		LoginWebPage loginwebkey;
 		OrganizerStatus organizerkey;
 		ProposalStatusPage proposalkey;
+		OrganizerCases organizercasekey;
+		OrganizerRedirectURL organizerurlkey;
 		
 	    @BeforeClass
 	    public void setesign() throws InterruptedException, IOException {
 	    	loginwebkey = new LoginWebPage(driver);
 	    	organizerkey = new OrganizerStatus(driver);
 	    	proposalkey =new ProposalStatusPage(driver);
+			organizercasekey = new OrganizerCases(driver);
+			organizerurlkey = new OrganizerRedirectURL(driver);
 	    }	
 	        @Test(priority = 1)
 			public void organizeropt() throws Exception {
-				
+				loginwebkey.loginqountweb();
 				organizerkey.statustabs();
-				organizerkey.wallhome();
-				proposalkey.Proposaltabs();
-				
+				loginwebkey.wallhome();
+				loginwebkey.logoutqountweb();
 	        }
 	        	
 	        @Test(priority = 2)
 	        public void orgupdate() throws Exception {
-	        	
+				loginwebkey.loginqountweb();
 	        	organizerkey.Organizerupdate();
-	        	organizerkey.wallhome();
+	        	loginwebkey.wallhome();
+				loginwebkey.logoutqountweb();
 	        }
 	        @Test(priority = 3)
 	        public void orgoption() throws Exception {
-	        	
+				loginwebkey.loginqountweb();
 	        	organizerkey.organizeroptions();
-	        	organizerkey.wallhome();
+	        	loginwebkey.wallhome();
+				loginwebkey.logoutqountweb();
 	        }
 	        @Test(priority = 4)
 	        public void directurl() throws Exception {
-	        	
+				loginwebkey.loginqountweb();
 	        	organizerkey.dirurl();
-	        	organizerkey.windowmain();
-	        	organizerkey.wallhome();
+	     //   	loginwebkey.windowmain();
+	        	loginwebkey.wallhome();
+				loginwebkey.logoutqountweb();
 	        }
 	        @Test(priority = 5)
 	        public void securelinkorg() throws Exception {
-	 	        	
+				    loginwebkey.loginqountweb();
 	 	        	organizerkey.dashorg();
-	 	        	organizerkey.wallhome();
+	 	        	loginwebkey.wallhome();
+				    loginwebkey.logoutqountweb();
 	        }
 	        @Test(priority = 6)
 	        public void scheduleorg() throws Exception {
-	        	
+				loginwebkey.loginqountweb();
 	        	organizerkey.sendattime();
-	        	organizerkey.wallhome();
+	        	loginwebkey.wallhome();
+				loginwebkey.logoutqountweb();
 	        }
 	        @Test(priority = 7)
 	        public void sendorg() throws Exception {
-	        	
+				loginwebkey.loginqountweb();
 	        	organizerkey.clientsend();
-	        	organizerkey.windowmain();
-	        	organizerkey.wallhome();
+	        	loginwebkey.windowmain();
+	        	loginwebkey.wallhome();
+				loginwebkey.logoutqountweb();
 	        }
 	        @Test(priority = 8)
 	        public void organizerdup() throws Exception {
 	        	loginwebkey.loginqountweb();
 	        	organizerkey.orgdup();
 //	        	organizerkey.windowmain();
-//	        	organizerkey.wallhome();
-//	        	organizerkey.logoutqountweb();
+	        	loginwebkey.wallhome();
+	        	loginwebkey.logoutqountweb();
 	        }
 	        @Test(priority = 9)
 	        public void selectorg() throws InterruptedException, IOException {
 	        	loginwebkey.loginqountweb();
 	        	organizerkey.filterorganizer();
+				loginwebkey.wallhome();
+				loginwebkey.logoutqountweb();
 	        }
 	        @Test(priority = 10)
 	        public void organizerlink() throws Exception {
-	        	
+	        	loginwebkey.loginqountweb();
 	        	organizerkey.linkopen();
-	        	organizerkey.windowmain();
-	        	organizerkey.wallhome();
-	        	organizerkey.logoutqountweb();
+	        	loginwebkey.windowmain();
+	        	loginwebkey.wallhome();
+	        	loginwebkey.logoutqountweb();
 	}
+			@Test(priority = 11)
+			public void orgcases() throws Exception {
+			loginwebkey.loginqountweb();
+			organizercasekey.orgzer();
+			loginwebkey.wallhome();
+			loginwebkey.logoutqountweb();
+			}
+			@Test(priority = 12)
+			public void orgfilter() throws Exception {
+			loginwebkey.loginqountweb();
+			organizerkey.filterorganizer();
+			loginwebkey.wallhome();
+			loginwebkey.logoutqountweb();
+			}
 }

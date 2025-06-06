@@ -5,12 +5,14 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.FluentWait;
 
 import com.paulhammant.ngwebdriver.NgWebDriver;
 import com.qount.qa.proppackage.SetupProperties;
+import org.testng.ITestListener;
 
-public class EsignPage extends SetupProperties {
+public class EsignPage extends SetupProperties implements ITestListener {
 			WebDriver driver;
 			FluentWait<WebDriver> wait;
 			JavascriptExecutor jsDriver;
@@ -41,10 +43,24 @@ public class EsignPage extends SetupProperties {
 
 		    public EsignPage(WebDriver driver) {
 			this.driver = driver;
+			PageFactory.initElements(driver, this);
 			jsDriver = (JavascriptExecutor) driver;
 			ngWebDriver = new NgWebDriver(jsDriver);
 		    }
-
+			public void qountUrlWeb() throws InterruptedException, IOException {
+		//		SetupProper();
+		//		driver.get(prop.getProperty("url"));
+				driver.get("https://test.qount.io");
+		//		driver.manage().window().maximize();
+				Thread.sleep(5000);
+			}
+			public void qountLogon() throws InterruptedException, IOException {
+				SetupProper();
+				driver.findElement(username).sendKeys(prop.getProperty("validEmail"));
+				driver.findElement(password).sendKeys(prop.getProperty("validPassword"));
+				driver.findElement(submit).click();
+				Thread.sleep(11000);
+			}
 			public void esignpage() throws InterruptedException {
 				driver.findElement(esignatures).click();
 				Thread.sleep(9000);
